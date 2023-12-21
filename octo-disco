@@ -1,0 +1,10 @@
+        let maskReducer = MaskSettingsReducer()
+        let mediaReducer = MediaReducer(videoSettingsReducer: videoSettingsReducer,
+                                        maskSettingsReducer: maskReducer)
+    private(set) var collageReducer: CollageReducerProtocol
+    private(set) var gestureReducer: GestureReducerProtocol
+    
+    mutating func reduce(_ currentState: AppState,
+                         _ action: AppAction) -> AppState {
+        
+        var newState = currentState
